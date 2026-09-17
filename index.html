@@ -1,125 +1,234 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+```
+<title>My Portfolio</title>
 
-    <title>My Personal Portfolio</title>
+<link rel="stylesheet" href="style.css">
+```
 
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>My Personal Portfolio</h1>
+```
+<!-- Navigation -->
+<nav class="navbar">
 
-        <p>
-            Python | Data Analysis | Machine Learning
-        </p>
-    </header>
+    <div class="nav-container">
 
+        <a href="#" class="logo">My Portfolio</a>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
 
+    </div>
 
-    <!-- Main Content -->
-    <main>
-
-        <!-- About Section -->
-        <section id="about">
-
-            <h2>About Me</h2>
-
-            <p>
-                Hello! I am learning Python,
-                data analysis, and machine learning.
-            </p>
-
-            <p>
-                Welcome to my personal portfolio.
-            </p>
-
-        </section>
+</nav>
 
 
-        <!-- Skills Section -->
-        <section id="skills">
+<!-- Hero Section -->
+<header class="hero">
 
-            <h2>My Skills</h2>
+    <div class="hero-content">
 
-            <ul>
-                <li>Python</li>
-                <li>NumPy</li>
-                <li>Pandas</li>
-                <li>Matplotlib</li>
-                <li>SQL</li>
-                <li>Scikit-learn</li>
-            </ul>
+        <p class="intro">Hello, I'm</p>
 
-        </section>
+        <h1>Your Name</h1>
 
+        <h2>Python & Data Analysis Learner</h2>
 
-        <!-- Projects Section -->
-        <section id="projects">
-
-            <h2>My Projects</h2>
-
-            <article>
-                <h3>Project 1: Data Visualization</h3>
-
-                <p>
-                    Analyzing data using Python,
-                    Pandas, and Matplotlib.
-                </p>
-            </article>
-
-
-            <article>
-                <h3>Project 2: Machine Learning</h3>
-
-                <p>
-                    Classification and regression
-                    using Scikit-learn.
-                </p>
-            </article>
-
-        </section>
-
-
-        <!-- Contact Section -->
-        <section id="contact">
-
-            <h2>Contact</h2>
-
-            <p>
-                Email: vtprogram1150629@gmail.com
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <p>
-            © 2026 My Personal Portfolio
+        <p class="hero-text">
+            I am building my skills in Python, data analysis,
+            visualization, SQL, and machine learning.
         </p>
 
-    </footer>
+        <a href="#projects" class="button">
+            View My Projects
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- About -->
+<section id="about" class="section">
+
+    <h2>About Me</h2>
+
+    <div class="about-content">
+
+        <p>
+            Welcome to my personal portfolio.
+            I am interested in Python programming,
+            data analysis, data visualization,
+            databases, and machine learning.
+        </p>
+
+        <p>
+            I enjoy learning how data can be transformed
+            into useful information and visual insights.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Skills -->
+<section id="skills" class="section">
+
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>Python</h3>
+            <p>Programming and data processing</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Pandas</h3>
+            <p>Data cleaning and analysis</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>NumPy</h3>
+            <p>Numerical computing</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Matplotlib</h3>
+            <p>Data visualization</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>SQL</h3>
+            <p>Database queries and analysis</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Machine Learning</h3>
+            <p>Scikit-learn and model building</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Projects -->
+<section id="projects" class="section">
+
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+        <article class="project-card">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <h3>Data Visualization</h3>
+
+            <p>
+                Analyzed datasets using Python,
+                Pandas, and Matplotlib to create
+                meaningful charts and visualizations.
+            </p>
+
+            <p class="technology">
+                Python · Pandas · Matplotlib
+            </p>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <h3>SQL Data Analysis</h3>
+
+            <p>
+                Practiced database queries,
+                aggregation, joins, grouping,
+                and window functions.
+            </p>
+
+            <p class="technology">
+                MySQL · SQL
+            </p>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+                Built classification and regression
+                models using Scikit-learn and
+                evaluated their performance.
+            </p>
+
+            <p class="technology">
+                Python · Scikit-learn
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="section contact">
+
+    <h2>Contact</h2>
+
+    <p>
+        Interested in connecting or discussing
+        a project?
+    </p>
+
+    <a href="mailto:vtprogram1150629@gmail.com"
+       class="button">
+        Contact Me
+    </a>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        © 2026 MCHUNHU
+    </p>
+
+</footer>
+```
 
 </body>
+
 </html>
