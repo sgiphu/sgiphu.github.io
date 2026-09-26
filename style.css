@@ -45,13 +45,13 @@ text-align: center;
 ```
 color: #2563eb;
 
-font-size: 25px;
+font-size: 24px;
 
 font-weight: bold;
 
-letter-spacing: 3px;
+letter-spacing: 2px;
 
-margin-bottom: 40px;
+margin-bottom: 60px;
 ```
 
 }
@@ -74,7 +74,7 @@ padding-right: max(25px, calc((100% - 1000px) / 2));
 }
 
 .creative-section h2 {
-margin-top: 30;
+margin-top: 50;
 }
 
 .creative-grid {
@@ -86,7 +86,7 @@ grid-template-columns:
 
 gap: 25px;
 
-margin-top: 45px;
+margin-top: 60px;
 ```
 
 }
@@ -127,7 +127,7 @@ font-size: 13px;
 
 font-weight: bold;
 
-margin-bottom: 25px;
+margin-bottom: 50px;
 ```
 
 }
