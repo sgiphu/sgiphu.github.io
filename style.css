@@ -51,7 +51,7 @@ font-weight: bold;
 
 letter-spacing: 2px;
 
-margin-bottom: 60px;
+margin-bottom: 40px;
 ```
 
 }
@@ -74,7 +74,7 @@ padding-right: max(25px, calc((100% - 1000px) / 2));
 }
 
 .creative-section h2 {
-margin-top: 50;
+margin-top: 40;
 }
 
 .creative-grid {
@@ -86,7 +86,7 @@ grid-template-columns:
 
 gap: 25px;
 
-margin-top: 60px;
+margin-top: 50px;
 ```
 
 }
