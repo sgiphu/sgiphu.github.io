@@ -4,7 +4,6 @@
 
 <head>
 
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -14,13 +13,35 @@
 
 <link rel="stylesheet" href="style.css">
 
+<!-- Language toggle styles (self-contained so style.css is untouched) -->
+<style>
+    .lang-toggle {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 1000;
+        padding: 8px 16px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #222;
+        font: inherit;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .lang-toggle:hover { background: #fff; }
+    .lang-toggle:focus-visible { outline: 3px solid #4a90e2; outline-offset: 2px; }
+</style>
 
 </head>
 
 <body>
 
-
-
+<!-- Language toggle: switches between English and Traditional Chinese -->
+<button id="langToggle" class="lang-toggle" type="button"
+        aria-label="Switch language">
+    繁體中文
+</button>
 
 <!-- =========================
      Hero
@@ -34,19 +55,17 @@
             Ming Chun HU
         </h1>
 
-        <h2 style="text-align: center;">
+        <h2 style="text-align: center;" data-i18n="hero_sub">
             Python · Databases · AI · Creative Design
         </h2>
-      <! p class="hero-text" style="text-align: left;font-size: 16px;font-weight: bold;margin-bottom: 40px;">
-        <p class="hero-text" style="text-align: left;font-size: 17px;margin-bottom: 40px;margin-top: 40px;">
+
+        <p class="hero-text" style="text-align: left;font-size: 17px;margin-bottom: 40px;margin-top: 40px;" data-i18n="hero_text">
        WELCOME!  I’m building and expanding my skills across Python, 
               data analysis and visualization, databases, 
               machine learning, Photoshop, and AI-assisted creative design—
               combining technical expertise with creative problem-solving.
         </p>
 
-      
-    
     </div>
 
 </header>
@@ -61,15 +80,11 @@
 <section id="python"
          class="section creative-section">
 
-    <! p class="section-label">
-        <!--PYTHON & MYSQL PORTFOLIO-->
-    <! /p>
-
-    <h2>
+    <h2 data-i18n="py_title">
         Python & mySQL Portfolio
     </h2>
 
-    <p class="section-intro">
+    <p class="section-intro" data-i18n="py_intro">
 
         Explore my journey of Python and mySQL learning progress.
 
@@ -80,13 +95,14 @@
 
     <div class="creative-button">
 
-        <!a href="https://sgiphu.github.io/Python/"
+        <a href="https://sgiphu.github.io/Python/"
            class="button"
-           target="_blank">
+           target="_blank"
+           data-i18n="py_btn">
 
-           Visit Python & MySQL Portfolio →
+            Visit Python & MySQL Portfolio →
 
-        <!/a>
+        </a>
 
     </div>
 
@@ -104,11 +120,11 @@
     <p class="section-label">
     </p>
 
-    <h2>
-        Photoshop & AI Creation Portfoilo
+    <h2 data-i18n="ps_title">
+        Photoshop & AI Creation Portfolio
     </h2>
 
-    <p class="section-intro">
+    <p class="section-intro" data-i18n="ps_intro">
 
         Explore my creative work combining
         Photoshop, AI-assisted image generation,
@@ -123,7 +139,8 @@
 
         <a href="https://sgiphu.github.io/ps-ai-portfolio/"
            class="button"
-           target="_blank">
+           target="_blank"
+           data-i18n="ps_btn">
 
             Visit PS & AI Portfolio →
 
@@ -143,13 +160,13 @@
     <p class="section-label">
     </p>
 
-    <h2>
+    <h2 data-i18n="dc_title">
         Digital Learning Course Website
     </h2>
 
-    <p class="section-intro">
+    <p class="section-intro" data-i18n="dc_intro">
 
-        The digital leaning course website is created by AI.
+        The digital learning course website is created by AI.
 
     </p>
 
@@ -160,7 +177,8 @@
 
         <a href="https://sgiphu.github.io/DigitalLearningCourse/"
            class="button"
-           target="_blank">
+           target="_blank"
+           data-i18n="dc_btn">
 
             Visit Digital Course Learning site →
 
@@ -177,15 +195,15 @@
 <section id="contact"
          class="section creative-section">
 
-    <h2>
+    <h2 data-i18n="ct_title">
         Contact
     </h2>
 
     <p>
-        Thank you for visiting my website.
-         <a href="mailto:vtprogram1150629@example.com"
-       class="button">
-       Email Me </a>if you are interested with my works.
+        <span data-i18n="ct_before">Thank you for visiting my website.</span>
+         <a href="mailto:vtprogram1150629@gmail.com"
+       class="button" data-i18n="ct_btn">Email Me</a>
+        <span data-i18n="ct_after">if you are interested in my works.</span>
     </p>
 
 
@@ -203,12 +221,72 @@
         © 2026 MCHUNHU
     </p>
 
-    <p>
+    <p data-i18n="hero_sub">
         Python · Databases · AI · Creative Design
     </p>
 
 </footer>
-```
+
+
+<!-- =========================
+     Language switcher
+     ========================= -->
+<script>
+(function () {
+    // Traditional Chinese translations, keyed by data-i18n value.
+    var zh = {
+        hero_sub:  "Python · 資料庫 · 人工智慧 · 創意設計",
+        hero_text: "歡迎!我正持續建立並拓展自己在 Python、資料分析與視覺化、資料庫、機器學習、Photoshop 以及 AI 輔助創意設計等方面的能力,結合技術專長與創意解決問題的思維。",
+        py_title:  "Python 與 MySQL 作品集",
+        py_intro:  "歡迎瀏覽我學習 Python 與 MySQL 的歷程。",
+        py_btn:    "前往 Python 與 MySQL 作品集 →",
+        ps_title:  "Photoshop 與 AI 創作作品集",
+        ps_intro:  "歡迎瀏覽我結合 Photoshop、AI 輔助圖像生成、影像編修、合成與視覺設計的創作作品。",
+        ps_btn:    "前往 PS 與 AI 作品集 →",
+        dc_title:  "數位學習課程網站",
+        dc_intro:  "這個數位學習課程網站由 AI 製作。",
+        dc_btn:    "前往數位學習課程網站 →",
+        ct_title:  "聯絡我",
+        ct_before: "感謝您造訪我的網站。",
+        ct_btn:    "寄信給我",
+        ct_after:  "若您對我的作品有興趣,歡迎來信。"
+    };
+
+    var nodes = document.querySelectorAll("[data-i18n]");
+    var btn = document.getElementById("langToggle");
+    var en = {};
+
+    // Remember the original English text so we can switch back.
+    nodes.forEach(function (el) {
+        en[el.getAttribute("data-i18n") + "|" + Array.prototype.indexOf.call(nodes, el)] =
+            el.textContent.replace(/\s+/g, " ").trim();
+    });
+
+    function apply(lang) {
+        nodes.forEach(function (el, i) {
+            var key = el.getAttribute("data-i18n");
+            el.textContent = (lang === "zh") ? zh[key] : en[key + "|" + i];
+        });
+        document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+        document.title = (lang === "zh")
+            ? "Ming Chun HU | 個人作品集"
+            : "Ming Chun HU | Personal Portfolio";
+        btn.textContent = (lang === "zh") ? "English" : "繁體中文";
+        btn.setAttribute("aria-label",
+            (lang === "zh") ? "切換為英文" : "Switch to Traditional Chinese");
+        try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
+
+    var current = "en";
+    try { if (localStorage.getItem("lang") === "zh") current = "zh"; } catch (e) {}
+    if (current === "zh") apply("zh");
+
+    btn.addEventListener("click", function () {
+        current = (current === "en") ? "zh" : "en";
+        apply(current);
+    });
+})();
+</script>
 
 </body>
 
