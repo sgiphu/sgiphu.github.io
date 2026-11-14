@@ -1,5 +1,3 @@
-
-<script>
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
 function save() {
@@ -9,19 +7,22 @@ function save() {
 
 function render() {
   const list = document.getElementById("cart");
+  const totalEl = document.getElementById("total");
+  if (!list || !totalEl) return;
+
   list.innerHTML = "";
   let total = 0;
   cart.forEach(item => {
     total += item.price * item.qty;
     const li = document.createElement("li");
-    li.textContent = `${item.name} × ${item.qty} `;
+    li.textContent = `NT${item.name} × NT${item.qty} `;
     const btn = document.createElement("button");
     btn.textContent = "Remove";
     btn.onclick = () => { cart = cart.filter(i => i.id !== item.id); save(); };
     li.appendChild(btn);
     list.appendChild(li);
   });
-  document.getElementById("total").textContent = total;
+  totalEl.textContent = total;
 }
 
 document.querySelectorAll(".add").forEach(btn => {
@@ -35,4 +36,3 @@ document.querySelectorAll(".add").forEach(btn => {
 });
 
 render();
-</script>
