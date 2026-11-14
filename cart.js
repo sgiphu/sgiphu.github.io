@@ -1,9 +1,3 @@
-<button class="add" data-id="p1" data-name="Product 1" data-price="299">Add to cart</button>
-<button class="add" data-id="p2" data-name="Product 2" data-price="499">Add to cart</button>
-
-<h3>Cart</h3>
-<ul id="cart"></ul>
-<p>Total: $<span id="total">0</span></p>
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
